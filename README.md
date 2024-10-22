@@ -120,7 +120,7 @@ To build the example, you'll need to have Qt 5 or Qt 6 installed.
       *NOTE: Qt5_DIR is the location of `Qt5Config.cmake` in your Qt install dir*
 
       ```sh
-      cmake -S. -B_build -DCMAKE_INSTALL_PREFIX=_install -DQt5_DIR=C:/Qt/5.15.12/lib/cmake/Qt5
+      cmake -S. -B_build -DQt5_DIR=C:/Qt/5.15.12/lib/cmake/Qt5
       ```
 
     - For Qt6
@@ -128,7 +128,7 @@ To build the example, you'll need to have Qt 5 or Qt 6 installed.
       *NOTE: Qt6_DIR is the location of `Qt6Config.cmake` in your Qt install dir*
 
       ```cmd
-      cmake -S. -B_build -DCMAKE_INSTALL_PREFIX=_install -DUSE_QT6=TRUE -DQt6_DIR=C:/Qt/6.6.1/lib/cmake/Qt6
+      cmake -S. -B_build -DUSE_QT6=TRUE -DQt6_DIR=C:/Qt/6.6.1/lib/cmake/Qt6
       ```
 
 1. build the project
@@ -144,5 +144,5 @@ To build the example, you'll need to have Qt 5 or Qt 6 installed.
     *NOTE: in the _install/ directory you should see that the `QtCore.dll` was deployed*
 
     ```cmd
-    cmake --install _build --config Release
+    cmake --install _build --config Release --prefix=_install
     ```
