@@ -346,6 +346,10 @@ function(windeployqt)
   )
   if (_windeploy_stdout MATCHES [[Qt Deploy Tool ([0-9]+(\.[0-9]+(\.[0-9]+)?)?)]])
     set(_windeploy_version ${CMAKE_MATCH_1})
+  elseif (_windeploy_stdout MATCHES [[^([0-9]+(\.[0-9]+(\.[0-9]+)?)?)$]])
+    set(_windeploy_version ${CMAKE_MATCH_1})
+  else()
+    message(FATAL_ERROR "failed to extract the version of windeployqt.exe with --version")
   endif()
 
   # --------------------------
