@@ -41,8 +41,9 @@ include(${PROJECT_SOURCE_DIR}/../WinDeployQt.cmake)
 
 # basic versionless invokation (should work for both Qt5 and Qt6)
 windeployqt(
-  TARGET ${PROJECT_NAME} # <-- deploy dependencies for this target
+  TARGET ${PROJECT_NAME} # <-- deploy qt dependencies for this target
   DIRECTORY bin          # <-- install qt .dlls into a 'bin' subdirectory
+  VERBOSE                # <-- pass the '--verbose 1' flag to windeployqt.exe
   ARGS
     "--no-translations"  # <-- pass these args directly to windeployqt.exe
 )
