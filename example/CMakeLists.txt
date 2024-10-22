@@ -51,5 +51,5 @@ windeployqt(
 
 install(
   TARGETS ${PROJECT_NAME}
-  DESTINATION .
+  DESTINATION bin
 )
