@@ -43,6 +43,8 @@ include(${PROJECT_SOURCE_DIR}/../WinDeployQt.cmake)
 windeployqt(
   TARGET ${PROJECT_NAME} # <-- deploy dependencies for this target
   DIRECTORY bin          # <-- install qt .dlls into a 'bin' subdirectory
+  ARGS
+    "--no-translations"  # <-- pass these args directly to windeployqt.exe
 )
 
 # ---
